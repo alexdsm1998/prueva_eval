@@ -54,5 +54,44 @@ boolean=true;
     alert('el juego ha terminado');
   }
  }
+}else {
+  intentos=prompt('introduce un numero de intentos entre 5 y 10');
+  while (fallos<intentos && aciertos<adivinar.length) {
+  boolean=true;
+    var letrausu =prompt("introduce una  letra");
+    while (boolean) {
+        if (isNaN(letrausu)) {
+          boolean=false;
+        } else {
+            var letrausu = prompt("tienes que introducir una letra");
+            boolean=true;
+            fallos++;
+          }
+        }
+
+    var acertado=false;
+    for (var i = 0; i < n; i++) {
+      if (adivinar.charAt(i)==letrausu) {
+        array[i]=adivinar.charAt(i);
+        console.log(array);
+        acertado=true;
+        aciertos++;
+      }
+    }
+
+    if (acertado==true) {
+      alert("has acertado");
+      console.log('numero de fallos',fallos);
+    } else {
+      alert("letra no encontrada");
+      fallos++;
+      console.log('numero de fallos',fallos);
+    }
+
+    if (letrausu=='fin' || letrausu=='FIN') {
+      fallos=intentos;
+      alert('el juego ha terminado');
+    }
+   }
 }
 console.log(array);
