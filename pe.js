@@ -8,11 +8,14 @@ var adivinar=palabras[aleat];
 var fallos=0;
 var array=[];
 var n = adivinar.length;
+
 console.log(palabras);
 console.log('numero de fallos',fallos);
+
 for (var i = 0; i < n; i++) {
   array[i]='0'*i;
 }
+
 if(intentos>5 && intentos<=10){
 while (fallos<intentos && aciertos<adivinar.length) {
 boolean=true;
@@ -36,6 +39,7 @@ boolean=true;
       aciertos++;
     }
   }
+
   if (acertado==true) {
     alert("has acertado");
     console.log('numero de fallos',fallos);
@@ -44,6 +48,7 @@ boolean=true;
     fallos++;
     console.log('numero de fallos',fallos);
   }
+
   if (letrausu=='fin' || letrausu=='FIN') {
     fallos=intentos;
     alert('el juego ha terminado');
